@@ -29,7 +29,7 @@ def get_application() -> FastAPI:
                 await conn.run_sync(Base.metadata.drop_all)
                 await conn.run_sync(Base.metadata.create_all)
 
-        # application.add_event_handler("startup", init_tables)
+        application.add_event_handler("startup", init_tables)
 
     return application
 
